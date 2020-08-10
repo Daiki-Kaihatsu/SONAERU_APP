@@ -1,0 +1,69 @@
+# docker-composerリファレンス和訳 
+# https://qiita.com/zembutsu/items/9e9d80e05e36e882caaa
+version: '3'
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile-mysql
+    # 実行時に再起動するかどうか(今回はdockerをビルド時や立ち上げる際にMYSQLを再起動、という意味)
+    restart: always
+    image: mysql:8.0.19
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      MYSQL_ROOT_PASSWORD: 
+      TZ: 'Asia/Tokyo'
+    volumes:
+      - db-data:/var/lib/mysql
+    tty: true
+    ports:
+      - 6306:3306
+    container_name: app_db
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile-ruby-dev
+    # rails sではpuma.rbを読まない => nginxとsocket通信できないので注意。
+    command: >
+      bash -c "bundle install &&
+      bin/rails db:create &&
+      bin/rails db:migrate &&
+      rm -rf tmp/pids/server.pid &&
+      bundle exec pumactl start"
+    env_file: .env.dev
+    volumes:
+      # Dockerfileで定義したWORKDIRと同じ名前で、そこから相対パスで考えてマウント
+      - .:/app
+      - bundle-data:/app/vendor/bundle
+      - bundle:/app/.bundle
+      - public:/app/public
+      - tmp:/app/tmp
+      - log:/app/log
+    # ホスト(自分のPC)で4000にアクセスすると、向こうの3000に行く。なのでlocalhost:4000でアクセス。
+    ports:
+      - 3000:3000
+    depends_on:
+      - db
+    tty: true
+    stdin_open: true
+    container_name: app_app
+  webserver:
+    build:
+      context: containers/nginx
+    env_file:
+      - ./.env.dev
+    volumes:
+      - public:/app/public
+      - tmp:/app/tmp
+    ports:
+      - 80:80
+    depends_on:
+      - app
+    container_name: app_nginx
+volumes:
+  db-data:
+  bundle-data:
+  bundle:
+  public:
+  tmp:
+  log:
