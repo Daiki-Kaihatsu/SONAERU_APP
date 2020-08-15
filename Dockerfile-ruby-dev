@@ -42,7 +42,7 @@ RUN curl -sL https://deb.nodesource.com/setup_12.x | bash - && apt-get install -
 # https://www.express.nec.co.jp/linux/distributions/knowledge/system/false.html
 RUN useradd --user-group --create-home --shell /bin/false app
 
-ENV APP_ROOT /app_name
+ENV APP_ROOT /app
 
 RUN mkdir /$APP_ROOT && \
     mkdir /$APP_ROOT/log && \

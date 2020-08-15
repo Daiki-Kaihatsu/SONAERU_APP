@@ -11,7 +11,8 @@ services:
     image: mysql:8.0.19
     command: --default-authentication-plugin=mysql_native_password
     environment:
-      MYSQL_ROOT_PASSWORD: 
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: root
       TZ: 'Asia/Tokyo'
     volumes:
       - db-data:/var/lib/mysql
@@ -30,7 +31,6 @@ services:
       bin/rails db:migrate &&
       rm -rf tmp/pids/server.pid &&
       bundle exec pumactl start"
-    env_file: .env.dev
     volumes:
       # Dockerfileで定義したWORKDIRと同じ名前で、そこから相対パスで考えてマウント
       - .:/app
@@ -50,8 +50,6 @@ services:
   webserver:
     build:
       context: containers/nginx
-    env_file:
-      - ./.env.dev
     volumes:
       - public:/app/public
       - tmp:/app/tmp
