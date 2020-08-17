@@ -1,0 +1,111 @@
+// html body {
+//   background: url(https://subtlepatterns.com/patterns/sativa.png) repeat 
+// }
+
+.new-user{
+  width: 600px;
+  margin: 10px auto;
+  font-size: 16px;
+}
+
+.new-user-header {
+  background: teal;
+  padding: 20px;
+  font-size: 1.4em;
+  font-weight: normal;
+  text-align: center;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.new-user-triangle {
+  width: 0;
+  margin-right: auto;
+  margin-left: auto;
+  border: 12px solid transparent;
+  border-bottom-color: teal;
+}
+
+.new-user-container {
+  background: whitesmoke;
+  padding: 12px;
+}
+
+.new-user input {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+}
+
+.new-user input[type="text"],
+.new-user input[type="email"],
+.new-user input[type="password"]{
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+  border-radius: 30px;
+}
+
+/* Text fields' focus effect */
+.new-user input[type="text"]:focus,
+.new-user input[type="email"]:focus,
+.new-user input[type="password"]:focus {
+  border-color: #888;
+}
+
+.new-user input[type="submit"] {
+  background: #299;
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 35px;
+}
+
+.img-profile{
+  text-align: center;
+}
+
+#cover-profile-image{
+  
+}
+.profile-image{
+  border-radius: 50%;
+  width: 260px;
+  height: 200px;
+  object-fit: cover;
+  cursor:pointer;
+}
+
+.profile-relative{
+  position: relative;
+  i{
+    position: absolute;
+    top: 28%;
+    left: 48%;
+    color: whitesmoke;
+    font-size: 25px;
+  }
+}
+#user_profile_image{
+  display: none;
+}
+
+.inputs{
+  width: 100%;
+  margin: 15px auto;
+}
+
+.area{
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+  border-radius: 8px;
+  width: 100%;
+  margin: 15px auto;
+}
