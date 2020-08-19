@@ -1,0 +1,40 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'index-board' %>
+<% end %>
+<div class="container board-margin">
+  <h1 class="text-center">投稿一覧画面</h1>
+  <div class="row">
+    <% @boards.each do |board| %>
+      <div class="col-md-12">
+        <hr class="hr">
+          <div class="border-index">
+            <div class="border-index-flex">
+              <div class="child-index">
+                <%= link_to user_path(board.user.id) do %> 
+                  <%= attachment_image_tag board.user, :profile_image,fallback: "No-Image.png",class:"index-user-image"%>
+                <% end %>
+                <span class="index-name"><%= link_to board.user.name ,user_path(board.user.id)%>が
+                <%= board.updated_at.strftime("%Y-%m-%d") %>に投稿</span>
+                <div class="index-title">
+                <%= link_to board_path(board.id)do %>
+                  <%= board.title%>
+                <% end %>
+                </div>
+              </div>
+            </div>
+            <div class="tag">
+              <div class="review">
+                ★★★★★
+              </div>
+              <div class="tag-name">
+              <% board.tags.each do |tag|%>
+                <span class="badge badge-primary"><%= tag.name%></span>
+              <% end %>
+              </div>
+            </div>
+          </div>
+          <hr class="hr">
+      </div>
+    <% end %>
+  </div>
+</div>

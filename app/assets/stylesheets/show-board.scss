@@ -1,0 +1,102 @@
+
+
+.show-user-image{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.show-board-name{
+  color: darkgray;
+  font-size: 14px;
+}
+
+.show-board-name{
+  color: darkgray;
+  font-size: 14px;
+}
+
+.show-board-name a {
+  color: darkgray;
+}
+
+.show-board-name a:hover{
+  color: darkgray;
+}
+
+.show-board-child{
+  margin-left: 43px;
+}
+
+.show-board-title{
+  text-align: center
+}
+
+.show-board-title h1 {
+  font-weight: bold;
+}
+
+.show-board-image {
+  text-align: center;
+}
+
+.show-board-title-image {
+  width: 700px;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+
+.material-quantity{
+  text-align: center;
+  width: 250px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  color: #a27652;
+
+}
+
+.material{
+  margin-right: auto;
+  margin-left: 0;
+}
+
+.quantity{
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.board-boarder{
+  width: 250px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.board-show-background{
+  margin: 100px auto;
+  position: relative;
+  background: #fff0cd;
+  box-shadow: 0px 0px 0px 5px #fff0cd;
+  border: dashed 2px white;
+  padding: 0.2em 0.5em;
+  color: #454545;
+}
+.board-show-background:after{
+  position: absolute;
+  content: '';
+  right: -7px;
+  top: -7px;
+  border-width: 0 15px 15px 0;
+  border-style: solid;
+  border-color: #ffdb88 #fff #ffdb88;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
+}
+
+.border-material h4 {
+  width: 250px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  color: #401c00;
+}

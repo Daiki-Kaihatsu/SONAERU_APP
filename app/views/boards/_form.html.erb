@@ -1,0 +1,64 @@
+<%=form_with(model: board, local: true) do |f|%>
+  <div id="cover-image" class="relative">
+    <% if board.image_id.present? %>
+      <%= image_tag attachment_url(board, :image),class:'board-image'%>
+    <% else %>
+      <%= image_tag 'none_image.png',class:'board-image'%>
+    <% end %>
+    <i class="fa fa-camera"></i>
+  </div>
+    <%= f.attachment_field :image %><br>
+    <div class="board-title">
+      <div class="boatd-title-label">
+        <%= f.label :'タイトル',class:'nice-label'%>
+      </div>
+        <%= f.text_field :title,class:'nice-textbox'%>
+    </div>
+
+  <hr>
+
+  <div class="name-flex">
+    <div class="material-name">
+      <p>材料</p>
+    </div>
+    <div class="quantity-name">
+      <p>分量</p>
+    </div>
+  </div>
+  <div class="board_details">
+    <%= f.fields_for :board_materials do |df| %>
+      <%= render partial: "board_material_fields",locals: {f: df } %>
+    <% end %>
+
+    <%# 追加ボタン %>
+      <div class="links">
+        <div class="links-width">
+          <%= link_to_add_association( '行を追加する', f, :board_materials,class:'btn-squared') %>
+        </div>
+      </div>
+
+
+    <%= f.fields_for :board_details do |df| %>
+      <%= render partial: "board_detail_fields",locals: {f: df } %>
+    <% end %>
+
+    <%# 追加ボタン %>
+      <div class="links">
+        <div class="links-width">
+            <%= link_to_add_association( '行を追加する', f, :board_details,class:'btn-squared')%>
+        </div>
+      </div>
+  </div>
+
+  <div class="checkbox">
+  <span class="box-title">タグ</span>
+  <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %> 
+      <%= tag.label class: '' do %> 
+        <%= tag.check_box class: '' %> 
+        <%= tag.text %> 
+      <% end %> 
+  <% end %> 
+      
+  </div>
+    <%= f.submit class:'form-button' %>
+<% end %>

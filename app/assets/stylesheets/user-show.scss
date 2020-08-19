@@ -1,0 +1,75 @@
+.user-image {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.margin{
+  margin: 100px auto;
+  background-color: rgba(245, 245, 245,0.5);
+}
+
+.center{
+  text-align: center;
+}
+
+.show-name{
+  margin: 10px;
+  font-size: 30px;
+}
+
+.show-profile{
+  margin-top: 15px;
+}
+
+.profile span {
+  color: rgba(104, 84, 72, 0.801);
+  text-decoration: none;
+}
+
+.show-email,
+.profile{
+  color: rgba(104, 84, 72, 0.801);
+}
+
+.show-btn-edit{
+  width: 230px;
+  margin: 0 auto;
+}
+
+.btn-square {
+  display: inline-block;
+  padding: 0.5em 1em;
+  background: #627295;/*ボタン色*/
+  color: #FFF;
+  border-bottom: solid 4px #424b5f;
+  border-radius: 3px;
+  width: 100%;
+}
+.btn-square:hover{
+  color: white;
+}
+.btn-square:active {
+  /*ボタンを押したとき*/
+  -webkit-transform: translateY(4px);
+  transform: translateY(4px);/*下に動く*/
+  border-bottom: none;/*線を消す*/
+}
+
+.button {
+  display       : inline-block;
+  border-radius : 4%;          /* 角丸       */
+  font-size     : 13pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 12px 29px;   /* 余白       */
+  background    : #ffffff;     /* 背景色     */
+  color         : #000000;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  box-shadow    : 4px 4px 4px #666666;  /* 影の設定 */
+}
+.button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+}

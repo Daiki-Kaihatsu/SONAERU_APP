@@ -30,6 +30,12 @@ gem 'font-awesome-rails'
 gem "refile", require: "refile/rails", github: 'manfe/refile'
 gem "refile-mini_magick"
 
+# ページネーション 
+gem 'kaminari'
+
+# 動的フォーム
+gem 'cocoon'
+
 
 
 group :development, :test do

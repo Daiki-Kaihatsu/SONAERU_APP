@@ -1,0 +1,45 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'show-board' %>
+<% end %>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 board-show-background">
+      <div class="show-board-flex">
+        <div class="show-board-parent">
+          <%= link_to user_path(@board.user.id) do %> 
+            <%= attachment_image_tag @board.user, :profile_image,fallback: "No-Image.png",class:"show-user-image"%>
+          <% end %>
+          <span class="show-board-name">
+            <%= link_to @board.user.name ,user_path(@board.user.id)%>が
+            <%= @board.updated_at.strftime("%Y-%m-%d") %>に投稿
+          </span>
+        </div>
+        <div class="show-board-child">
+          <% @board.tags.each do |tag|%>
+            <span class="badge badge-info"><%= tag.name%></span>
+          <% end %>
+        </div>
+      </div>
+        <div class="show-board-title">
+          <h1><%= @board.title%></h1>
+        </div>
+        <div class="show-board-image">
+          <%= attachment_image_tag @board, :image,class:'show-board-title-image'%>
+        </div>
+        <div class="border-material">
+          <h4>材料</h4>
+          <hr class="board-boarder">
+          <% @board_material.each do |material|%>
+            <div class="material-quantity">
+              <div class="material"><%= material.material%></div>
+              <div class="quantity"><%= material.quantity%></div>
+            </div>
+            <hr class="board-boarder">
+        <% end %>
+        <%= render 'reviews/form', review: @review, board: @board%>
+    </div>
+  </div>
+</div>
+

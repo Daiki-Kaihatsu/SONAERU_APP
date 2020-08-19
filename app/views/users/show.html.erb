@@ -1,2 +1,50 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'user-show' %>
+<% end %>
+<%= render 'shared/flash_messages'%>
+  
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-md-6 margin">
+      <div class="center">
+        <div class="show-image">
+          <%= attachment_image_tag @user,:profile_image, fallback:"No-Image.png",class:'user-image'%>
+        </div>
+        <div class="show-name">
+          <%= @user.name%>
+        </div>
+        <div class="show-email">
+          <% if @user.id == current_user.id %>
+              <span><%= @user.email %></span>
+          <% end %>
+        </div>
+        <div class="follow">
+          <p class="profile">
+            <%= link_to following_user_path(@user),style:'text-decoration:none;' do%>
+              <span>フォロー<%= @user.followings.count%></span> 
+            <% end %>
+              &ensp;  &ensp;  &ensp; 
+            <%= link_to followers_user_path(@user),style:'text-decoration:none;' do%>
+              <span>フォロワー<%= @user.followers.count%></span>
+            <% end %>
+          </p>
+        </div>
+        <div class="show-profile">
+          <%=simple_format @user.profile%>
+        </div>
+        <div class="follow-btn">
+          <%= render 'relationships/follow_button', user: @user %>
+        </div>
+        <div class="show-btn-edit">
+          <% if @user.id == current_user.id %>
+                <%= link_to 'プロフィールを編集する', edit_user_registration_path ,class:'btn-square',style:'text-decoration: none;'%>
+          <% end %>
+        </div>
+        <hr>
+        <div class="text">
+          <%= @user.name %>さんが投稿した記事一覧</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

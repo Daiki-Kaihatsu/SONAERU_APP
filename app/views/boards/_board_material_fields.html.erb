@@ -1,0 +1,12 @@
+<div class="nested-fields font-display">
+  <div class="material-add box25">
+        <%= f.text_field:material,class:'text-material',:placeholder => "例)画用紙"  %><br>
+        <%= f.text_field:quantity,class:'text',:placeholder => "例)3枚"%><br>
+    <div class="flex-delete">
+      <%= link_to_remove_association(f) do%>
+        <i class="fas fa-window-close font"></i>    
+      <% end %>
+    </div>
+  </div>
+    <%= f.hidden_field :id%>
+</div>

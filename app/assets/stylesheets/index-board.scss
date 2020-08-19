@@ -1,0 +1,58 @@
+
+
+.index-title{
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 43px;
+  color: cornflowerblue;
+}
+
+.index-user-image{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.hr{
+  margin:0;
+}
+
+.board-margin{
+  margin: 100px auto;
+  background: white;
+}
+
+.border-index-flex{
+  display: flex;
+}
+
+.index-name{
+  color: darkgray;
+  font-size: 14px;
+}
+
+.index-name a {
+  color: darkgray;
+}
+
+.index-name a:hover{
+  color: darkgray;
+}
+
+.index-title a:hover{
+  text-decoration: none;
+}
+
+.tag{
+  display: flex;
+}
+
+.review{
+  margin-left: 41px;
+}
+
+.tag-name{
+  margin-left: auto;
+  margin-right: 0;
+}

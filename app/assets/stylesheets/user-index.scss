@@ -1,0 +1,31 @@
+.user-index-flex{
+  display: flex;
+}
+
+.name-color{
+  color: lightslategray;
+}
+
+.email-color{
+  color: darkgray;
+}
+
+.profileImage-index{
+  width: 130px;
+  border-radius: 50%;
+  height: 136px;
+  object-fit: cover;
+}
+
+ // ページネーション 
+/*ページネーション自体のデザイン*/
+.pagination{
+  justify-content: center;
+}
+
+// /*ページネーション自体のデザイン*/
+.pagination>li>a {          
+  border-radius: 5px;
+  margin-left: 20px;
+}
+
