@@ -1,4 +1,5 @@
 class BoardsController < ApplicationController
+  before_action :authenticate_user!, only: [:show]
   def index
     @boards = Board.order(created_at: :desc)
   end

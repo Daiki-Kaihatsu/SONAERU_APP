@@ -7,7 +7,6 @@
     <% @boards.each do |board| %>
       <div class="col-md-12">
         <hr class="hr">
-          <div class="border-index">
             <div class="border-index-flex">
               <div class="child-index">
                 <%= link_to user_path(board.user.id) do %> 
@@ -20,19 +19,32 @@
                   <%= board.title%>
                 <% end %>
                 </div>
+                <div class="tag">
+                  <% board.tags.each do |tag|%>
+                    <span class="badge badge-info"><%= tag.name%></span>
+                  <% end %>
+                </div>
               </div>
             </div>
-            <div class="tag">
-              <div class="review">
-                ★★★★★
+              <div class=" front-flex">
+              <div class="star-rating">
+                <div class=" star-rating-front" style="width: <%= board.review_score_percentage %>%">★★★★★</div>
+                <div class=" star-rating-back">★★★★★</div>
               </div>
-              <div class="tag-name">
-              <% board.tags.each do |tag|%>
-                <span class="badge badge-primary"><%= tag.name%></span>
-              <% end %>
+              <div class="average-score-display">
+                  <%= board.avg_score %>点(<%= board.reviews.count%>件のレビュー)
               </div>
             </div>
+            <div class="review">
+            <%= link_to board_reviews_path(board) do%>
+              レビューを見る
+            <%end%>
+            <%= link_to board_path(board) do%>
+              レビューを書く
+            <%end%>
+            
           </div>
+
           <hr class="hr">
       </div>
     <% end %>

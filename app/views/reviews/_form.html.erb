@@ -3,6 +3,18 @@
 <% end %>
 
 <p>レビューを書く</p>
+
+<%if review.errors.any?%>
+  <div class="">
+    <h2><%= review.errors.count%>件のエラーがあります。</h2>
+    <ul>
+      <% review.errors.full_messages.each do |message| %>
+        <li><%= message%></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <div class="rating-box">
   <%= form_with model: review, url: board_reviews_path(board), local: true do |f|%>
     <div class="main-rating">
@@ -15,10 +27,12 @@
       </div>
     </div>
     <div class="rating-value-display"><span id="rating-value-display">0</span>/5</div>
-    <%= f.hidden_field :board_id, id: "rating-value", value: board.id%>
+    <%= f.hidden_field :board_id, value: board.id%>
     <%= f.hidden_field :score, id: "rating-value"%>
     <%= f.text_area :content%>
     <%= f.submit "保存"%>
     <%= link_to "他のレビューを見る", board_reviews_path(board)%>
   <% end %>
 </div>
+
+<%= javascript_include_tag "reviews.js" %>

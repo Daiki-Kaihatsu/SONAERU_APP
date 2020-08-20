@@ -5,6 +5,7 @@
   font-weight: bold;
   margin-left: 43px;
   color: cornflowerblue;
+
 }
 
 .index-user-image{
@@ -21,10 +22,6 @@
 .board-margin{
   margin: 100px auto;
   background: white;
-}
-
-.border-index-flex{
-  display: flex;
 }
 
 .index-name{
@@ -45,14 +42,47 @@
 }
 
 .tag{
-  display: flex;
+  margin-left: 43px;
+  margin-bottom: 10px;
 }
 
 .review{
-  margin-left: 41px;
+  margin-top: 10px;
+  margin-left: 43px;
+  margin-bottom: 10px;
 }
 
 .tag-name{
   margin-left: auto;
   margin-right: 0;
 }
+
+.star-rating{
+  position: relative;
+  font-size: 25px;
+}
+
+.star-rating-front{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  color: #fc3;
+}
+
+.star-rating-back{
+  color: #ccc;
+}
+
+.front-flex{
+  display: flex;
+  margin-left: 42px;
+  width: 400px;
+}
+
+.average-score-display{
+  font-size:16px;
+  padding-top: 9px;
+  margin-left: 20px;
+}
+

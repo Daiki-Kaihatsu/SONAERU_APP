@@ -1,2 +1,13 @@
-<h1>Reviews#index</h1>
-<p>Find me in app/views/reviews/index.html.erb</p>
+<div>
+  <%= @board.title%>
+</div>
+<div>
+  <%= @board.reviews.count %>件のレビュー
+</div>
+<div>
+  <% @reviews.each do |review| %>
+    <%= review.user.name%>
+    <%= review.score%>
+    <%= review.content%>
+  <% end %>
+</div>
