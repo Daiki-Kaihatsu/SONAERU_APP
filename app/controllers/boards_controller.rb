@@ -8,6 +8,7 @@ class BoardsController < ApplicationController
     @board= Board.find(params[:id])
     board_id = Board.find(params[:id]).id
     @board_material = BoardMaterial.where(board_id: board_id)
+    @board_details = BoardDetail.where(board_id: board_id)
     @review = Review.new
   end
 

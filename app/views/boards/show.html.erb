@@ -39,7 +39,13 @@
             <hr class="board-boarder">
         <% end %>
         <%= render 'reviews/form', review: @review, board: @board%>
+        
+        <% @board_details.each do |board_detail| %>
+          <div class="text-show ">
+            <%= attachment_image_tag board_detail,:image_detail%>
+            <%= board_detail.body%>
+          </div>
+        <% end %>
     </div>
   </div>
 </div>
-

@@ -1,8 +1,10 @@
+
+
 <div class="nested-fields">
-  <div class="add">
-        <%= f.text_area:body,class:'body',rows:5,cols:1,:placeholder => "説明文を入力"  %><br>
-      <div id="add-image" class="add-relative"> 
-        <%= image_tag 'none_image.png',class:'add-image'%>
+  <div class="imgPreview">
+        <%= f.text_area:body,class:'body',rows:3,cols:1,:placeholder => "説明文を入力"  %><br>
+      <div id="add-image_0" class="add-relative image-add"> 
+        <%= image_tag 'none_image.png',class:'add-image',id:'image-preview'%>
         <i class="fa fa-camera add-i"></i>
       </div> 
       <div class="flex-delete-image">
@@ -10,8 +12,9 @@
           <i class="fas fa-window-close font"></i>    
           <% end %>
       </div>
-    <%= f.attachment_field :image_detail,class:'add-image imageFile'%>
-  
+    <%= f.attachment_field :image_detail, class: "imageFile",id:"imageFile_0"%>
   </div>
     <%= f.hidden_field :id%>
 </div>
+
+<%= javascript_include_tag 'boards_show.js' %>

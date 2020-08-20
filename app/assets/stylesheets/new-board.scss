@@ -92,7 +92,7 @@ margin: 30px;
 }
 
 // 追加
-.add{
+.imgPreview{
   display: flex;
   justify-content: center;
   position: relative;
@@ -212,7 +212,7 @@ margin: 30px;
   margin-right: 5px;
 }
 
-.add-image{
+.imgPreview img{
   width: 175px;
   height: 175px;
   margin-right: 5px;
@@ -319,3 +319,11 @@ margin: 30px;
 .form-button:active {
   border-color: #fde095;
 }
+
+// #board_board_details_attributes_0_image_detail{
+//   display: none;
+// }
+
+// [id^="imageFile"] { /* セレクタ名の前方一致 */
+//   display: none;
+// }

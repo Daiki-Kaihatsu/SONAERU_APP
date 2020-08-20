@@ -37,17 +37,17 @@
         </div>
       </div>
 
-
+    <div class="formImage">
     <%= f.fields_for :board_details do |df| %>
       <%= render partial: "board_detail_fields",locals: {f: df } %>
     <% end %>
 
     <%# 追加ボタン %>
       <div class="links">
-        <div class="links-width">
             <%= link_to_add_association( '行を追加する', f, :board_details,class:'btn-squared')%>
         </div>
       </div>
+    </div>
   </div>
 
   <div class="checkbox">
@@ -62,4 +62,5 @@
   </div>
     <%= f.submit class:'form-button' %>
 <% end %>
+
 
