@@ -1,20 +1,18 @@
-
-
 <div class="nested-fields">
-  <div class="imgPreview">
+    <div class="imgPreview">
         <%= f.text_area:body,class:'body',rows:3,cols:1,:placeholder => "説明文を入力"  %><br>
-      <div id="add-image_0" class="add-relative image-add"> 
-        <%= image_tag 'none_image.png',class:'add-image',id:'image-preview'%>
-        <i class="fa fa-camera add-i"></i>
-      </div> 
-      <div class="flex-delete-image">
-        <%= link_to_remove_association(f) do%>
-          <i class="fas fa-window-close font"></i>    
-          <% end %>
-      </div>
-    <%= f.attachment_field :image_detail, class: "imageFile",id:"imageFile_0"%>
-  </div>
+        <div id="add-image_0" class="add-relative image-add"> 
+          <%= image_tag 'none_image.png',class:'add-image',id:'image-preview'%>
+          <i class="fa fa-camera add-i"></i>
+        </div> 
+            <%= f.attachment_field :image_detail, class: "imageFile",id:"imageFile_0"%>
+        <div class="flex-delete-image">
+          <%= link_to_remove_association(f) do%>
+            <i class="fas fa-window-close font"></i>    
+            <% end %>
+        </div>
+    </div>
     <%= f.hidden_field :id%>
 </div>
 
-<%= javascript_include_tag 'boards_show.js' %>
+<%= javascript_include_tag 'boards_detail_image.js' %>

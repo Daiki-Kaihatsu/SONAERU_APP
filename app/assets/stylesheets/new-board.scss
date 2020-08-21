@@ -1,5 +1,5 @@
 .cp_bgpattern01 {
-	background-color: white;
+	background-color: #FFFFDD;
 	// background-image:
 	// linear-gradient(#f0e333 10%, transparent 10%, transparent);
 	background-size: 10px 10px;
@@ -15,7 +15,7 @@
   box-shadow: 0px 0px 0px 5px #fff0cd;
   border: dashed 2px white;
   padding: 0.2em 0.5em;
-  color: #454545;
+  color: #443c3c;
   width: 500px;
   margin-bottom: 20px;
 }
@@ -65,6 +65,7 @@ margin: 30px;
 
   .nice-label{
     margin: 0;
+    color: sienna;
   }
 
   .board-title{
@@ -94,7 +95,6 @@ margin: 30px;
 // 追加
 .imgPreview{
   display: flex;
-  justify-content: center;
   position: relative;
   background: #fae6b9;
   box-shadow: 0px 0px 0px 5px #fae6b9;
@@ -102,8 +102,8 @@ margin: 30px;
   padding: 0.2em 0.5em;
   color: #454545;
   width: 500px;
-  margin: 40px auto;
-  margin-bottom: 20px;
+  margin: 20px auto;
+  height: 198px;
 }
 
 .add:after{
@@ -198,34 +198,32 @@ margin: 30px;
 }
 
   .imageFile{
-    width: 500px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 30px;
-    cursor: pointer;
-    // display:none;
+    width: 193px;
   }
 
 .body{
   width: 250px;
   height: 180px;
   margin-right: 5px;
+  margin-left: 6px;
 }
 
 .imgPreview img{
-  width: 175px;
-  height: 175px;
+  width: 188px;
+  height: 183px;
   margin-right: 5px;
   border-radius: 5px;
   cursor: pointer;
+  object-fit: cover;
 }
 
 .flex-delete{
   margin-top: 5px;
+  margin-left: 12px;
 }
 
 .flex-delete-image{
-  margin: auto 0;
+  margin: auto;
 }
 
 .links{
@@ -324,6 +322,11 @@ margin: 30px;
 //   display: none;
 // }
 
-// [id^="imageFile"] { /* セレクタ名の前方一致 */
-//   display: none;
+[id^="imageFile"] { /* セレクタ名の前方一致 */
+  display: none;
+}
+
+// .delete-flex{
+//   display: flex;
 // }
+
