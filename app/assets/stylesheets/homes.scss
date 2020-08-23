@@ -2,22 +2,88 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 // 背景画像
-.topPage-image{
-  background-image:url(top-image.jpg);
-  background-repeat:  no-repeat; 
-  background-size:  cover; 
-  height: 915px;
+@media screen and (max-width: 700px) {
+
+  .top-image-relative{
+    position: relative;
+  }
+  
+  .title-absolute{
+    position: absolute;
+      top: -70px;
+      height: auto;
+      width: 100%;
   }
 
-.title {
+
+
+  .button-top{
+    position: absolute;
+    top: 140px;
+    width: 100%;
+    margin-top: 40px;
+  }
+  
+  
+}
+
+
+@media screen and (min-width: 700px) {
+
+  .top-image-relative{
+    position: relative;
+  }
+  
+  .title-absolute{
+    position: absolute;
+      top: -20px;
+      height: auto;
+      width: 100%;
+  }
+
+  .button-top{
+    position: absolute;
+    top: 140px;
+    width: 100%;
+    margin-top: 150px;
+  }
+
+  .title-absolute h1{
+    font-size: 90px;
+  }
+  
+  .title-absolute p {
+    font-size: 30px;
+  }
+  
+
+}
+
+// .top-image-width{
+//   width: 100%;
+// }
+
+// .topPage-image{
+//   background-image:url(top-image.jpg) ;
+//   background-size:  cover; 
+//   width: 100%;
+//   height: 600px;
+//   }
+
+.top-image{
+  width: 100%;
+}
+
+  h1 {
   font-family:serif;
   color: rgb(248, 248, 248);
-  font-size: 100px;
+  font-size: 50px;
   padding: 10px 0;
   text-align: center;
   margin-bottom: 0;
   padding-top: 100px;
 }
+
 .title:before {
   content: "";
   position: absolute;
@@ -31,7 +97,12 @@
 
 .subtitle{
   color:white;
+  font-size: 16px;
 }
+
+
+
+
 
 //ボタン
 .arrow_btn {
@@ -62,10 +133,68 @@
 	transform: translateX(6px);
 }
 
-.button-top{
-  margin-top:150px;
-}
+
 
 .button-margin-top{
   margin-top:30px;
+}
+
+.font{
+  text-align: center;
+  width: 100%;
+  margin-top: 40px;
+}
+
+.font h2 {
+  font-size: 40px;
+}
+
+.font-awesome{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.font-awesome h3{
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+
+.i-latest{
+  text-align: center;
+}
+
+.i-look{
+  text-align: center;
+}
+
+.font-awesome i {
+  font-size: 50px;
+}
+
+
+@media screen and (min-width: 642px) {
+  .font-awesome{
+    display: flex;
+    justify-content: center;
+  }
+  .font-awesome h3{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  
+  }
+  
+  .font-awesome i {
+    font-size: 50px;
+  }
+  
+  .i-margin{
+    text-align: center;
+  }
+  
+}
+
+.goods{
+  text-align: center;
 }

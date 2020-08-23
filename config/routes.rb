@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   end
   resources :relationships, only: [:create, :destroy]
   resources :boards do
+    get :search, on: :collection
     resources :reviews, only: [:index, :create]
   end
 

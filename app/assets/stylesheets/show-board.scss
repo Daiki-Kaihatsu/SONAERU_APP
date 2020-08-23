@@ -1,10 +1,20 @@
-
+main{
+  background: #fbf9f3;
+}
 
 .show-user-image{
   width: 40px;
   height: 40px;
   object-fit: cover;
   border-radius: 50%;
+}
+
+.show-board{
+  width: 800px;
+  margin: 100px auto;
+  background: white;
+  padding: 30px;
+  border-radius: 20px;
 }
 
 .show-board-name{
@@ -30,7 +40,8 @@
 }
 
 .show-board-title{
-  text-align: center
+  text-align: center;
+  margin-top:30px;
 }
 
 .show-board-title h1 {
@@ -42,7 +53,7 @@
 }
 
 .show-board-title-image {
-  width: 700px;
+  width: 500px;
   object-fit: cover;
   border-radius: 20px;
   margin-bottom: 30px;
@@ -75,24 +86,11 @@
 }
 
 .board-show-background{
-  margin: 100px auto;
-  position: relative;
-  background: #fff0cd;
-  box-shadow: 0px 0px 0px 5px #fff0cd;
-  border: dashed 2px white;
+  margin: 0 auto;
   padding: 0.2em 0.5em;
-  color: #454545;
 }
-.board-show-background:after{
-  position: absolute;
-  content: '';
-  right: -7px;
-  top: -7px;
-  border-width: 0 15px 15px 0;
-  border-style: solid;
-  border-color: #ffdb88 #fff #ffdb88;
-  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.15);
-}
+
+
 
 .border-material h4 {
   width: 250px;
@@ -104,3 +102,70 @@
 #board_board_details_attributes_0_image_detail{
   display: none;
 }
+
+
+.text-show{
+  padding: 0.2em 0.5em;
+  background: #fbf9f3;
+  width: 320px;
+  border-radius: 10px;
+}
+
+
+.user-show-flex{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.user-show-board{
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin-left: 20px;
+  border-radius: 10px;
+}
+
+.Heading{
+  width: 570px;
+  margin: 10px auto;
+  color: #401c00;
+  font-weight: bold;
+}
+
+.Heading p {
+  margin-bottom: 0;
+}
+
+.review_container{
+  width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fbf9f3;
+  border-radius: 15px;
+}
+
+// 星
+.star-rating{
+  position: relative;
+  width: 160px;
+}
+
+.star-rating-front{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  color: #fc3;
+}
+
+.star-rating-back{
+  color: #ccc;
+}
+
+.front-flex{
+  display: flex;
+}
+
+
+

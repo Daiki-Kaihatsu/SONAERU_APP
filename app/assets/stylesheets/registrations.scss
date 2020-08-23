@@ -109,3 +109,31 @@ html body {
   width: 100%;
   margin: 15px auto;
 }
+
+@media screen and (min-width: 600px) {/* 600px以上*/
+  .new-user {
+    width: 600px;
+    margin: 10px auto;
+    font-size: 16px;
+  }
+}
+
+
+@media screen and (max-width: 600px) {/* 600px以下*/
+  .new-user {
+    max-width: 100%;
+    margin: 100px auto;
+    font-size: 16px;
+  }
+
+  .img-profile{
+    max-width: 280px;
+    margin:0 auto;
+  }
+}
+
+@media screen and (max-width: 280px) {/* 280px以下*/
+  .profile-image{
+    max-width: 100%;
+  }
+}

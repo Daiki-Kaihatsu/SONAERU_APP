@@ -26,9 +26,12 @@
 .alert-notice {
   @extend .alert-secondary;
   text-align: center;
+  margin-bottom: 0;
+
 }
 
 .alert-alert {
   @extend .alert-danger;
   text-align: center;
+  margin-bottom: 0;
 }

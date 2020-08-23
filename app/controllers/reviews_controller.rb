@@ -7,9 +7,10 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @board= Board.find(params[:board_id])
     @review.user_id = current_user.id
     if @review.save
-      redirect_to board_reviews_path(@review.board)
+      redirect_to board_path(@board)
     else
       @board= Board.find(params[:board_id])
       board_id = @board.id
@@ -21,6 +22,6 @@ class ReviewsController < ApplicationController
   private
 
     def review_params
-      params.require(:review).permit(:board_id,:user_id, :score, :content)
+      params.require(:review).permit(:board_id,:user_id, :score, :content ,:review_image,:review_title)
     end
 end

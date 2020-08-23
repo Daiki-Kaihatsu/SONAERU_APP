@@ -1,51 +1,99 @@
 <% content_for :css do %>
   <%= stylesheet_link_tag 'show-board' %>
+  <%= stylesheet_link_tag 'reviews' %>
 <% end %>
 
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-12 board-show-background">
-      <div class="show-board-flex">
-        <div class="show-board-parent">
-          <%= link_to user_path(@board.user.id) do %> 
-            <%= attachment_image_tag @board.user, :profile_image,fallback: "No-Image.png",class:"show-user-image"%>
-          <% end %>
-          <span class="show-board-name">
-            <%= link_to @board.user.name ,user_path(@board.user.id)%>が
-            <%= @board.updated_at.strftime("%Y-%m-%d") %>に投稿
-          </span>
-        </div>
-        <div class="show-board-child">
-          <% @board.tags.each do |tag|%>
-            <span class="badge badge-info"><%= tag.name%></span>
-          <% end %>
-        </div>
+<div class="board-show-background">
+  <div class="show-board">
+    <div class="show-board-flex">
+      <div class="show-board-parent">
+        <%= link_to user_path(@board.user.id) do %> 
+          <%= attachment_image_tag @board.user, :profile_image,fallback: "No-Image.png",class:"show-user-image"%>
+        <% end %>
+        <span class="show-board-name">
+          <%= link_to @board.user.name ,user_path(@board.user.id)%>が
+          <%= @board.updated_at.strftime("%Y-%m-%d") %>に投稿
+        </span>
       </div>
-        <div class="show-board-title">
-          <h1><%= @board.title%></h1>
-        </div>
-        <div class="show-board-image">
-          <%= attachment_image_tag @board, :image,class:'show-board-title-image'%>
-        </div>
-        <div class="border-material">
-          <h4>材料</h4>
-          <hr class="board-boarder">
-          <% @board_material.each do |material|%>
-            <div class="material-quantity">
-              <div class="material"><%= material.material%></div>
-              <div class="quantity"><%= material.quantity%></div>
-            </div>
-            <hr class="board-boarder">
+      <div class="show-board-child">
+        <% @board.tags.each do |tag|%>
+          <span class="badge badge-info"><%= tag.name%></span>
         <% end %>
-        <%= render 'reviews/form', review: @review, board: @board%>
-        
-        <% @board_details.each do |board_detail| %>
-          <div class="text-show ">
-            <%= attachment_image_tag board_detail,:image_detail%>
-            <%= board_detail.body%>
+      </div>
+    </div>
+      <div class="show-board-title">
+        <h1><%= @board.title%></h1>
+      </div>
+      <div class="show-board-image">
+        <%= attachment_image_tag @board, :image,class:'show-board-title-image'%>
+      </div>
+      <div class="border-material">
+        <h4>材料</h4>
+        <hr class="board-boarder">
+        <% @board_material.each do |material|%>
+          <div class="material-quantity">
+            <div class="material"><%= material.material%></div>
+            <div class="quantity"><%= material.quantity%></div>
           </div>
-        <% end %>
+          <hr class="board-boarder">
+      <% end %>
+      
+      <div class="Heading">
+        <p>作り方</p>
+      </div>
+      <% @board_details.each do |board_detail| %>
+        <div class="user-show-flex">
+          <div class="text-show ">
+            <%=simple_format board_detail.body%>
+          </div>
+          <div class="user-show-image">
+            <%= attachment_image_tag board_detail,:image_detail,class:'user-show-board'%>
+          </div>
+        </div>
+      <% end %>
+      <hr>
+      <div class="Heading">
+        <p>レビューを投稿する</p>
+      </div>
+      <div class="review_container">
+        <%= render 'reviews/form', review: @review, board: @board%>
+      </div>
+  </div>
+  <hr>
+  <div class="Heading">
+    <p>投稿者の声</p>
+  </div>
+  <% @reviews.each do |review| %>
+  <div class="review-past">
+    <div class="speech">
+      <div class="review-created">
+        <%= review.created_at.strftime("%Y-%m-%d %H:%M") %>
+      </div>
+          <div class="star-rating">
+            <div class=" star-rating-front" style="width: <%= review.score * 10 %>%">★★★★★</div>
+            <div class=" star-rating-back">★★★★★</div>
+          </div>
+      <div class="review-title">
+        〜<%= review.review_title%>〜
+      </div>
+      <div class="review-content">
+        <%=simple_format review.content%>
+      </div>
+      <div class="review-user-image">
+        <%= attachment_image_tag review, :review_image%>
+      </div>
+
+    </div>
+    <div class="review-user-profile">
+      <%= attachment_image_tag review.user, :profile_image,fallback: "No-Image.png"%>
+    </div>
+    <div class="review-user-name">
+      <span>
+        <%= review.user.name%>
+      </span>
     </div>
   </div>
+  <% end %>
+  
+  
 </div>

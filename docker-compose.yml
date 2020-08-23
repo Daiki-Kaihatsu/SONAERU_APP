@@ -30,7 +30,7 @@ services:
       bin/rails db:create &&
       bin/rails db:migrate &&
       rm -rf tmp/pids/server.pid &&
-      bundle exec pumactl start"
+      bundle exec rails s -p 3000 -b '0.0.0.0'"
     volumes:
       # Dockerfileで定義したWORKDIRと同じ名前で、そこから相対パスで考えてマウント
       - .:/app
@@ -47,17 +47,17 @@ services:
     tty: true
     stdin_open: true
     container_name: app_app
-  webserver:
-    build:
-      context: containers/nginx
-    volumes:
-      - public:/app/public
-      - tmp:/app/tmp
-    ports:
-      - 80:80
-    depends_on:
-      - app
-    container_name: app_nginx
+#   webserver:
+#     build:
+#       context: containers/nginx
+#     volumes:
+#       - public:/app/public
+#       - tmp:/app/tmp
+#     ports:
+#       - 80:80
+#     depends_on:
+#       - app
+#     container_name: app_nginx
 volumes:
   db-data:
   bundle-data:

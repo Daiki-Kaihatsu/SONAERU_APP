@@ -1,9 +1,9 @@
-<div class="nested-fields">
+<div class="nested-fields add-detail">
     <div class="imgPreview">
         <%= f.text_area:body,class:'body',rows:3,cols:1,:placeholder => "説明文を入力"  %><br>
         <div id="add-image_0" class="add-relative image-add"> 
-          <%= image_tag 'none_image.png',class:'add-image',id:'image-preview'%>
-          <i class="fa fa-camera add-i"></i>
+          <%= link_to '写真を載せる',class:'add-image',id:'image-preview'%>
+          <%# <i class="fa fa-camera add-i"></i> %>
         </div> 
             <%= f.attachment_field :image_detail, class: "imageFile",id:"imageFile_0"%>
         <div class="flex-delete-image">

@@ -2,8 +2,7 @@
   <%= stylesheet_link_tag 'reviews' %>
 <% end %>
 
-<p>レビューを書く</p>
-
+<%= form_with model: review, url: board_reviews_path(board), local: true do |f|%>
 <%if review.errors.any?%>
   <div class="">
     <h2><%= review.errors.count%>件のエラーがあります。</h2>
@@ -15,8 +14,14 @@
   </div>
 <% end %>
 
+<div class="review-title">
+  <div class="nice-wrap">
+    <%= f.text_field :review_title,class:'nice-title',placeholder: 'タイトル'%>
+  </div>
+</div>
+
 <div class="rating-box">
-  <%= form_with model: review, url: board_reviews_path(board), local: true do |f|%>
+  <div class="star-flex">
     <div class="main-rating">
       <div class="ratings">
         <span class="fa fa-star-o" id = "star"></span>
@@ -26,13 +31,35 @@
         <span class="fa fa-star-o" id = "star"></span>
       </div>
     </div>
-    <div class="rating-value-display"><span id="rating-value-display">0</span>/5</div>
+      <div class="rating-value-display"><span id="rating-value-display">0</span>/5</div>
+  </div>
+        
+        
+
     <%= f.hidden_field :board_id, value: board.id%>
     <%= f.hidden_field :score, id: "rating-value"%>
-    <%= f.text_area :content%>
-    <%= f.submit "保存"%>
-    <%= link_to "他のレビューを見る", board_reviews_path(board)%>
-  <% end %>
+<div class="review-title">
+  <div class="nice-wrap-text">
+    <%= f.text_area :content,class:'nice-text',placeholder: 'よかった点や気になった点があればコメントを投稿してみよう',autofocus: true, autocomplete: 'profile',rows:6%>
+  </div>
+</div>
+
+<div id="review-image" class="review-image-preview"> 
+  <%= link_to '写真を載せる',id:'review-preview'%>
+</div> 
+<%= f.attachment_field :review_image,class:'reviewFile',id:"preview"%>
+    
+  <div class="review-btn">
+      <%= f.submit "保存",class:'form-button'%>
+      <div class="look-color">
+        <%= link_to "他のレビューを見る", board_reviews_path(board)%>
+      </div>
+    <% end %>
+  </div>
+
 </div>
 
 <%= javascript_include_tag "reviews.js" %>
+<%= javascript_include_tag "reviews_form.js" %>
+<%= javascript_include_tag "reviews_image.js" %>
+

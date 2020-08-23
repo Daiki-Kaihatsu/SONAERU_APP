@@ -4,11 +4,7 @@
 //   background: url(https://subtlepatterns.com/patterns/sativa.png) repeat 
 // }
 
-.login {
-  width: 600px;
-  margin: 200px auto;
-  font-size: 16px;
-}
+
 
 /* Reset top and bottom margins from certain elements */
 .login-header,
@@ -91,4 +87,23 @@
 .input{
   width: 90%;
   margin: 15px auto;
+}
+
+
+@media screen and (min-width: 600px) {/* 600px以上*/
+  .login {
+    width: 600px;
+
+    margin: 200px auto;
+    font-size: 16px
+  }
+}
+
+
+@media screen and (max-width: 600px) {/* 600px以下*/
+  .login {
+    max-width: 100%;
+    margin: 200px auto;
+    font-size: 16px;
+  }
 }

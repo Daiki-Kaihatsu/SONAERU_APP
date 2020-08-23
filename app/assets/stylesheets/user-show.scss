@@ -5,10 +5,12 @@
   border-radius: 50%;
 }
 
-.margin{
-  margin: 100px auto;
-  background-color: rgba(245, 245, 245,0.5);
-}
+
+// .margin{
+//   margin: 100px auto;
+//   background-color: rgba(245, 245, 245, 0.5);
+//   width: 600px;
+// }
 
 .center{
   text-align: center;
@@ -73,3 +75,128 @@
 .button:hover {
   box-shadow    : none;        /* カーソル時の影消去 */
 }
+
+.child-show a:hover{
+  text-decoration: none;
+}
+
+.show-user-image{
+  width: 70px;
+  height: 70px;
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.child-show{
+  display: flex;
+}
+
+.day{
+  text-align: left;
+  margin-left: 5px;
+}
+
+.show-title{
+  font-size: 20px;
+  margin-left: 5px;
+  margin-top: 10px;
+  text-align: left;
+}
+
+
+
+// レビュー
+
+.star-rating{
+  position: relative;
+  font-size: 25px;
+}
+
+.star-rating-front{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  overflow: hidden;
+  color: #fc3;
+}
+
+.star-rating-back{
+  color: #ccc;
+}
+
+
+
+.average-score-display{
+  font-size:16px;
+  padding-top: 9px;
+  margin-left: 20px;
+}
+
+
+
+@media screen and (min-width: 600px) {/* 600px以上*/
+
+  
+  .margin{
+    background: white;
+  }
+
+  .center{
+    max-width: 460px;
+    margin: 50px auto;
+    background: whitesmoke;
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  .front-flex{
+  display: flex;
+  margin-left: 71px;
+  width: 400px;
+}
+
+.tag-board-show{
+  text-align: left;
+  margin-left: 75px;
+}
+
+.review{
+  text-align: left;
+  margin-left: 72px;
+}
+
+
+}
+
+@media screen and (max-width: 600px) {/* 600px以下*/
+
+  .margin{
+    background: white;
+  }
+
+  .center{
+    max-width: 350px;
+    margin: 50px auto;
+    background: whitesmoke;
+    border-radius: 15px;
+    padding: 20px;
+  }
+
+  front-flex {
+    margin-left: 71px;
+    width: 400px;
+    text-align: left;
+}
+
+.child-show{
+  justify-content: center;
+}
+
+.tag-board-show,
+.review {
+  text-align: center;
+}
+
+
+}
+

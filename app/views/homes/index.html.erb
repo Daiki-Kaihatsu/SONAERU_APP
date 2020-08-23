@@ -1,23 +1,36 @@
 <% content_for :css do %>
   <%= stylesheet_link_tag 'homes' %>
 <% end %>
-
-<div class="center topPage-image">
   <%= render 'shared/flash_messages'%>
-    <div class="text-center">
+
+<div class="top-width text-center">
+  <div class="top-image-relative">
+    <%= image_tag 'top-image.jpg',class:'top-image'%>
+    <div class="title-absolute">
       <h1 class="title">SONAERU</h1>
       <p class="subtitle">〜いつ起こるかわからない非常事態に備えよう〜</p>
-      <br><br>
-      <div class="button-top">
-        <%= link_to  new_user_session_path,id: 'login-button', class: 'arrow_btn' do %>
-        ログイン
-        <span><i class="fas fa-arrow-alt-circle-right"></i></span>
-        <% end %><br>
-        
-        <%= link_to  new_user_registration_path, class: 'arrow_btn button-margin-top' do %>
-        アカウント登録
-        <span><i class="fas fa-arrow-alt-circle-right"></i></span>
-        <% end %>
-      </div>
+    </div>
+
+  </div>
+</div>
+<div class="Explanation">
+  <div class="font">
+    <h2>SONAERUとは</h2>
+    <p>自然災害や感染症などのリスクが高まる状況の中、これらのリスクに対する情報共有の場として活用することを目的とした掲示板投稿サイトです</p>
+  </div>
+  <div class="font-awesome">
+    <div class="i-latest">
+      <div class="i-margin"><i class="fas fa-chart-line"></i></div>
+      <h3>最新の感染状況がわかる</h3>
+      <p>✔︎ その日の感染者の最新状況を掲載します</p>
+    </div>
+    <div class="i-look">
+      <div class="i-margin"><i class="fas fa-search-plus"></i></div>
+      <h3>探しやすい</h3>
+      <p>✔︎ 検索機能や最新の口コミから検索可能</p>
     </div>
   </div>
+  <div class="goods">
+    <h2>人気の防災グッズ</h2>
+  </div>
+</div>

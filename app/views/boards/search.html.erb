@@ -2,7 +2,9 @@
   <%= stylesheet_link_tag 'index-board' %>
 <% end %>
 
-<div class="search">
+<%= render 'shared/flash_messages'%>
+
+  <div class="search">
     <%= form_with url: search_boards_path, id: :form2 ,method: :get, local: true do |f| %>
   <div class="search-position text-right">
       <%= f.text_field :title ,id:'sbox2', placeholder:"タイトルを入力" %>
@@ -12,7 +14,6 @@
   </div>
     <% end %>
 </div>
-
 <div class="container board-margin">
   <div class="row">
     <% @boards.each do |board| %>
@@ -38,13 +39,13 @@
               </div>
             </div>
               <div class=" front-flex">
-                <div class="star-rating">
-                  <div class=" star-rating-front" style="width: <%= board.review_score_percentage %>%">★★★★★</div>
-                  <div class=" star-rating-back">★★★★★</div>
-                </div>
-                <div class="average-score-display">
-                    <%= board.avg_score %>点(<%= board.reviews.count%>件のレビュー)
-                </div>
+              <div class="star-rating">
+                <div class=" star-rating-front" style="width: <%= board.review_score_percentage %>%">★★★★★</div>
+                <div class=" star-rating-back">★★★★★</div>
+              </div>
+              <div class="average-score-display">
+                  <%= board.avg_score %>点(<%= board.reviews.count%>件のレビュー)
+              </div>
             </div>
             <div class="review">
             <%= link_to board_reviews_path(board) do%>
@@ -61,4 +62,3 @@
     <% end %>
   </div>
 </div>
-

@@ -3,15 +3,230 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .rating-box .ratings .fa {
-  font-size: 30px;
-  color: #fc0;
+  font-size: 20px;
+  color: rgba(255, 208, 0, 0.815);
   cursor: pointer;
+}
+
+.star-flex{
+  display: flex;
+  width: 500px;
+  margin: 0 auto;
 }
 
 .main-rating {
   display: flex;
+  width: 200px;
+  margin: 0 auto;
+  padding-top: 4px;
 }
 
 .rating-value-display {
   font-size: 20px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+
+// フォーム
+
+*{box-sizing: border-box;}
+
+
+// タイトル
+.nice-wrap{
+  position: relative;
+  width: 500px;
+  margin: 0 auto;
+}
+
+.nice-label{
+  position: absolute;
+  top: 7px;
+  left: 10px;
+  font-size: 16px;
+  color: #a0a0a0;
+  transition: all 0.25s ease;
+  
+  &.focus{
+    top: -25px;
+    left: 5px;
+    font-size: 14px;
+    color: rgb(145, 142, 142);
+  }
+}
+
+.nice-title{
+  position: relative;
+  display: block;
+  width: 500px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 19px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #a0a0a0;
+  outline: none;
+  height: 30px;
+}
+
+// テキスト
+.nice-wrap-text{
+  width: 500px;
+  margin: 0 auto;
+}
+
+
+.nice-text{
+  width: 100%;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #a0a0a0;
+  outline: none;
+}
+
+
+.Heading{
+  width: 570px;
+  margin: 10px auto;
+  color: #401c00;
+  font-weight: bold;
+}
+
+.Heading p {
+  margin-bottom: 0;
+}
+
+.form-button {
+  display       : inline-block;
+  border-radius : 5%;          /* 角丸       */
+  font-size     : 13pt;        /* 文字サイズ */
+  text-align    : center;      /* 文字位置   */
+  cursor        : pointer;     /* カーソル   */
+  padding       : 13px 12px;   /* 余白       */
+  background    : #fde095;     /* 背景色     */
+  color         : #ffffff;     /* 文字色     */
+  line-height   : 1em;         /* 1行の高さ  */
+  transition    : .3s;         /* なめらか変化 */
+  border-color: #fde095;
+}
+.form-button:hover {
+  box-shadow    : none;        /* カーソル時の影消去 */
+}
+.form-button:active {
+  border-color: #fde095;
+  outline:0;
+}
+
+.review-btn{
+  width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.look-color{
+  margin-top: 30px;
+}
+
+.look-color a{
+  color: tan;
+}
+
+.look-color a:hover{
+  color: tan;
+  text-decoration: none;
+}
+
+// 画像
+#preview{
+  display: none;
+}
+
+#review-image {
+  width: 500px;
+  margin: 0 auto;
+  height: 120px;
+}
+
+.review-image-preview a:hover{
+  text-decoration: none;
+}
+
+#review-image img{
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.review-past{
+  width: 600px;
+  height: 450px;
+  margin: 0 auto;
+}
+
+.speech{
+  width: 420px;
+  margin: 0 auto;
+  height: 345px;
+  background: #e3f9e3;
+
+  // 吹き出し
+  position: relative;
+  // margin: 2em 0 2em 40px;
+  padding: 15px;
+  border-radius: 30px;
+
+}
+
+.speech:before {  
+  content: "";
+  position: absolute;
+  left: -38px;
+  width: 13px;
+  height: 12px;
+  bottom: 0;
+  background: #e3f9e3;
+  border-radius: 50%;
+}
+
+.speech:after {
+  content: "";
+  position: absolute;
+  left: -24px;
+  width: 20px;
+  height: 18px;
+  bottom: 3px;
+  background: #e3f9e3;
+  border-radius: 50%;
+}
+
+.review-user-name span{
+  color: slategray;
+  font-size: 12px;
+}
+
+.user-image{
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 20px;
+}
+
+.review-user-profile img{
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.review-user-image img{
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
 }

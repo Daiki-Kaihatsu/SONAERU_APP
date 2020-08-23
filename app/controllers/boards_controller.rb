@@ -4,12 +4,20 @@ class BoardsController < ApplicationController
     @boards = Board.order(created_at: :desc)
   end
 
+  def search
+    params[:title].present?
+    @boards = Board.where('title LIKE ?', "%#{params[:title]}%")
+    flash.now[:notice] = "「#{params[:title]}」を含む検索結果が#{@boards.count}件ヒットしました"
+  end
+
   def show
     @board= Board.find(params[:id])
     board_id = Board.find(params[:id]).id
     @board_material = BoardMaterial.where(board_id: board_id)
     @board_details = BoardDetail.where(board_id: board_id)
     @review = Review.new
+    @reviews = Review.where(board_id: board_id)
+    # binding.pry
   end
 
   def new
