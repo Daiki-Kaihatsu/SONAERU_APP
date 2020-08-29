@@ -77,13 +77,14 @@
         〜<%= review.review_title%>〜
       </div>
       <div class="review-content">
-        <%=simple_format review.content%>
+        <%= review.content%>
       </div>
       <div class="review-user-image">
         <%= attachment_image_tag review, :review_image%>
       </div>
 
     </div>
+      <div class="blank"></div>
     <div class="review-user-profile">
       <%= attachment_image_tag review.user, :profile_image,fallback: "No-Image.png"%>
     </div>

@@ -15,9 +15,7 @@
 <% end %>
 
 <div class="review-title">
-  <div class="nice-wrap">
     <%= f.text_field :review_title,class:'nice-title',placeholder: 'タイトル'%>
-  </div>
 </div>
 
 <div class="rating-box">
@@ -38,11 +36,9 @@
 
     <%= f.hidden_field :board_id, value: board.id%>
     <%= f.hidden_field :score, id: "rating-value"%>
-<div class="review-title">
   <div class="nice-wrap-text">
     <%= f.text_area :content,class:'nice-text',placeholder: 'よかった点や気になった点があればコメントを投稿してみよう',autofocus: true, autocomplete: 'profile',rows:6%>
   </div>
-</div>
 
 <div id="review-image" class="review-image-preview"> 
   <%= link_to '写真を載せる',id:'review-preview'%>

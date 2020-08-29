@@ -116,6 +116,7 @@ main{
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
+  width: 100%;
 }
 
 .user-show-board{
@@ -163,9 +164,57 @@ main{
   color: #ccc;
 }
 
+
+
 .front-flex{
   display: flex;
 }
 
 
 
+
+
+@media screen and (max-width: 830px) {/* 830px以下*/
+  .show-board{
+    width: 100%;
+  }
+
+  .show-board-title-image{
+    max-width: 500px;
+  }
+
+}
+
+
+
+
+@media screen and (max-width: 580px) {/* 580px以下*/
+  
+  .show-board-title-image{
+    max-width: 100%;
+  }
+
+}
+
+@media screen and (max-width: 330px) {/* 580px以下*/
+  
+  .board-boarder{
+    max-width: 100%;
+  }
+
+}
+
+
+
+@media screen and (max-width: 620px) {/* 580px以下*/
+  
+  .text-show{
+    max-width: 100%;
+  }
+
+  .user-show-board{
+    max-width: 100px;
+    max-height: 100px;
+
+}
+}

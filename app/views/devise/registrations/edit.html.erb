@@ -18,33 +18,21 @@
         <%= f.attachment_field :profile_image,autofocus: true, autocomplete: 'profile_image'%>
       
       <div class="inputs">
+        <%= f.label '名前', class:'label-color'%>
         <%= f.text_field :name, autofocus: true, autocomplete: 'name',placeholder: "name" %>
       </div>
       <div class="inputs">
+        <%= f.label 'メールアドレス', class:'label-color'%>
         <%= f.email_field :email, autofocus: true, autocomplete: 'email',placeholder: "Eメール" %>
       </div>
-      <div class="inputs">
-        <%= f.password_field :password, autocomplete: 'current-password', 
-                        placeholder: "Password",
-                        required: true,
-                        minlength: @minimum_password_length,
-                        maxlength: '30' %>
-      </div>
-      <% if @minimum_password_length %>
-        <small class=""><%= t('devise.shared.minimum_password_length', count: @minimum_password_length) %></small>
-      <% end %>
-
-        <div class="inputs">
-          <%= f.password_field :password_confirmation, autocomplete: 'current-password', 
-                        placeholder: "Password確認",
-                        required: true,
-                        minlength: @minimum_password_length,
-                        maxlength: '30' %>
         <div class="text-area">
+          <%= f.label '一言', class:'label-color'%>
           <%= f.text_area :profile, autofocus: true,class:'area', autocomplete: 'profile',rows:3,placeholder: '一言' %>
-        </div>
         </div>
         <%= f.submit 'アカウント更新'%>
     <% end %>
   </div>
+  <p><%= link_to t('.cancel_my_account'), registration_path(resource_name), data: { confirm: t('.are_you_sure') }, method: :delete %>.</p>
 </div>
+
+<%= javascript_include_tag "user-profile-edit.js" %>
