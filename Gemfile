@@ -36,6 +36,9 @@ gem 'kaminari'
 # 動的フォーム
 gem 'cocoon'
 
+# 楽天API
+gem 'rakuten_web_service'
+
 
 
 group :development, :test do

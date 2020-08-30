@@ -18,6 +18,13 @@
   </div>
     <%= f.attachment_field :image %><br>
 
+  <div class="Heading">
+    <p>投稿の生い立ち</p>
+  </div>
+  <div class="reason">
+    <%= f.text_area:body,class:'body',rows:3,cols:1,:placeholder => "この投稿が生まれたきっかけや敬意を入力しよう"  %>
+  </div>
+
   <hr>
 
   <div class="material-quantity">

@@ -1,0 +1,141 @@
+body {
+  font-family: "Open Sans", sans-serif;
+  line-height: 1.25;
+}
+
+table {
+  border-collapse: collapse;
+  margin: 0 auto;
+  padding: 0;
+  width: 850px;
+
+  tr {
+    background-color: #fff;
+    border-bottom: 2px solid #fff;
+
+    &:nth-child(even) {
+      background-color: #eee;
+    }
+  }
+
+  th, td {
+    padding: .35em 1em;
+  }
+
+  thead {
+    th {
+      font-size: .85em;
+      padding: 1em;
+    }
+
+    tr {
+      background-color: #fd6767;
+      color: #fff;
+    }
+  }
+
+  tbody th {
+    text-align: left;
+    font-size: .8em;
+  }
+}
+
+.txt {
+  text-align: left;
+  font-size: .75em;
+}
+
+.price {
+  text-align: right;
+  color: #FF7043;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 850px) {
+  table {
+    border: 0;
+    width: 100%;
+
+    th {
+      background-color: #fd6767;
+      display: block;
+      border-right: none;
+    }
+
+    thead {
+      border: none;
+      clip: rect(0 0 0 0);
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      padding: 0;
+      position: absolute;
+      width: 1px;
+    }
+
+    tr {
+      display: block;
+      margin-bottom: .625em;
+      border: 1px solid #fd6767;
+    }
+
+    td {
+      border-bottom: 1px dotted #bbb;
+      display: block;
+      font-size: .8em;
+      text-align: right;
+      position: relative;
+      padding: 1.5em 1em 1.5em 4em;
+      border-right: none;
+
+      &::before {
+        content: attr(data-label);
+        font-weight: bold;
+        position: absolute;
+        left: 10px;
+        color: #000;
+      }
+
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+
+    tbody th {
+      color: #fff;
+      padding: 1em;
+    }
+
+    tr:nth-child(even) {
+      background-color: #fff;
+    }
+  }
+
+
+}
+
+.product-No-width{
+  width: 58px;
+}
+
+.image-width{
+  width: 89px;
+}
+
+.Reference-width{
+  width: 584px;
+}
+
+.price-width{
+  width: 95px;
+}
+
+.title{
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+span{
+  font-size: 15px;
+}

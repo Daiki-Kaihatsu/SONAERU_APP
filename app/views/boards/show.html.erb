@@ -32,7 +32,7 @@
         <hr class="board-boarder">
         <% @board_material.each do |material|%>
           <div class="material-quantity">
-            <div class="material"><%= material.material%></div>
+            <div class="material"><%=link_to material.material , controller: "rakuten", action: "look", material: material.material %></div>
             <div class="quantity"><%= material.quantity%></div>
           </div>
           <hr class="board-boarder">

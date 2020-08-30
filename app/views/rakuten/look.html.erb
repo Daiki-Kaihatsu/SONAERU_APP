@@ -1,0 +1,29 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'look' %>
+<% end %>
+
+<% i = 1 %>
+<h2 class="title">商品検索結果</h2>
+
+<% @items.each do |item| %>
+  <table>
+    <thead>
+      <tr>
+          <td class="product-No-width"></td>
+          <th scope="col"  class="product-No-width">No.</th>
+          <th scope="col" class="image-width"><span>画像</span></th>
+          <th scope="col" class="Reference-width">参照先</th>
+          <th scope="col" class="price-width">価格</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+          <th >商品</th>
+          <td data-label="No." class="txt"><%= i %></td><% i += 1 %>
+          <td data-label="画像" class="txt"><img src="<%= item['smallImageUrls'][0] %>"></td>
+          <td data-label="参照先" class="txt"><span><a href="<%= item['itemUrl'] %>" target="_blank"><%= item['itemName'] %></a></span></td>
+          <td data-label="価格" class="price"> <%= item['itemPrice'] %>円</td>
+      </tr>
+    </tbody>
+  </table> 
+<% end %>

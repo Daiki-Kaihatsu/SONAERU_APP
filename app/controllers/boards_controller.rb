@@ -50,7 +50,7 @@ class BoardsController < ApplicationController
   private
 
   def board_params
-    params.require(:board).permit(:title,:image, tag_ids: [],board_details_attributes: [:id, :body, :image_detail, :_destroy],board_materials_attributes: [:id, :material, :quantity, :_destroy])
+    params.require(:board).permit(:title,:image,:reason, tag_ids: [],board_details_attributes: [:id, :body, :image_detail, :_destroy],board_materials_attributes: [:id, :material, :quantity, :_destroy])
   end
 
 end

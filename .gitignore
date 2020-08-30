@@ -26,3 +26,5 @@
 /config/master.key
 
 /vendor/bundle
+
+/config/initializers/rakuten.rb

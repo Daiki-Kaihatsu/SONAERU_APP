@@ -21,6 +21,10 @@ main {
 //     padding: 20px;
 //   }
 
+  .reason{
+    max-width: 100%;
+  }
+
   .board-new-background{
     max-width: 530px;
   }
@@ -184,7 +188,7 @@ margin: 30px;
   background: #fff;
   border-color: #bbb;
   color: #555;
-  border-radius: 30px;
+  border-radius: 10px;
 }
 
 .formImage{
@@ -310,6 +314,8 @@ margin: 30px;
   height: 110px;
   margin-right: 5px;
   margin-left: 6px;
+  border-radius: 10px;
+
 }
 
 .imgPreview img{
@@ -439,6 +445,11 @@ margin: 30px;
 }
 
 .tag-width{
+  width: 500px;
+  margin: 0 auto;
+}
+
+.reason{
   width: 500px;
   margin: 0 auto;
 }

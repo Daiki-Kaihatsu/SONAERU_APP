@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'rakuten_look' => 'rakuten#look'
   devise_for :users,controllers: {
     registrations: 'users/registrations'
   }
