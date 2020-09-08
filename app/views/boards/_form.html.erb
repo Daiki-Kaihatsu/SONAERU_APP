@@ -21,8 +21,8 @@
   <div class="Heading">
     <p>投稿の生い立ち</p>
   </div>
-  <div class="reason">
-    <%= f.text_area:body,class:'body',rows:3,cols:1,:placeholder => "この投稿が生まれたきっかけや敬意を入力しよう"  %>
+  <div class="text-form">
+    <%= f.text_area:reason,class:'body',rows:3,cols:1,:placeholder => "この投稿が生まれたきっかけや敬意を入力しよう"  %>
   </div>
 
   <hr>
@@ -66,10 +66,16 @@
         </div>
       </div>
   </div>
+  <div class="Heading">
+    <p>一言</p>
+  </div>
+  <div class="text-form">
+    <%= f.text_area:point,class:'body',rows:3,cols:1,:placeholder => "アドバイスなどがあれば記載しよう！"  %>
+  </div>
     <div class="Heading">
       <p>タグ</p>
     </div>
-  <div class="tag-width">
+  <div class="text-form">
     <div class="checkbox">
       <%= f.collection_check_boxes(:tag_ids, Tag.all, :id, :name) do |tag| %> 
           <%= tag.label class: '' do %> 

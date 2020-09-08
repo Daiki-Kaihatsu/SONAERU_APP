@@ -1,0 +1,48 @@
+html body{
+  background-color: #061a2b;
+}
+
+.subtitle {
+  text-align: center;
+  margin-top: 50px;
+  color: white;
+}
+
+.wrapper{
+  margin: 100px auto;
+}
+
+
+
+.font-color{
+  color: white;
+  width: 100%;
+  margin: 0 auto;
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 25px;
+  display: flex;
+  justify-content: center;
+}
+
+.font-color span {
+  font-size: 15px;
+  padding-top: 8px;
+  color: #ccc;
+}
+
+.font-color h5 {
+  padding-top: 6px;
+}
+
+.font-color h6{
+  margin-right: 0;
+  margin-left: auto;
+  margin-top: auto;
+}
+
+.wrapper h4 {
+  color: white;
+  margin:0;
+  margin-top: 20px;
+}

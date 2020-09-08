@@ -39,6 +39,13 @@ gem 'cocoon'
 # 楽天API
 gem 'rakuten_web_service'
 
+# グラフ機能
+gem "chartkick"
+gem 'chart-js-rails', '~> 0.1.4'
+
+# データをrails側から渡すためgonを追加
+gem 'gon', '~> 6.2.0'
+
 
 
 group :development, :test do

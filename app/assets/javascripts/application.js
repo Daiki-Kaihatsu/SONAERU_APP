@@ -16,4 +16,4 @@
 //= require rails-ujs
 //= require cocoon
 //= require activestorage
-
+//= require Chart.min

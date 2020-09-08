@@ -1,0 +1,33 @@
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'chart' %>
+<% end %>
+<h1 class="subtitle">新型コロナ最新情報</h1>
+
+<div class="wrapper">
+  <h4 class="text-center">検査陽性者数</h4>
+  <div class="font-color">
+    <span>累計</span>&nbsp;<h5><%= @positive.positive_difference%></h5>&nbsp;<span>名</span>
+  </div>
+  
+  <div class="chart-container" style="position:relative; height:40vh; width:80vw; margin:0 auto; background: #242a3c; ">
+    <canvas id="PositiveChart"></canvas> 
+  </div>
+  <h4 class="text-center">PCR検査人数</h4>
+  <div class="font-color">
+    <span>累計</span>&nbsp;<h5><%= @pcrtest.pcrtest_sum%></h5>&nbsp;<span>名</span>
+  </div>
+  <div class="chart-container" style="position:relative; height:40vh; width:80vw; margin:0 auto; background: #242a3c; ">
+    <canvas id="PcrtestChart"></canvas> 
+  </div>
+
+  <h4 class="text-center">退院・療養解除</h4>
+  <div class="font-color">
+    <span>累計</span>&nbsp;<h5><%= @recovery.recovery%></h5>&nbsp;<span>名</span>
+  </div>
+  <div class="chart-container" style="position:relative; height:40vh; width:80vw; margin:0 auto;  background: #242a3c; ">
+    <canvas id="RecoveryChart"></canvas> 
+  </div>
+</div>
+
+
+<%= javascript_include_tag 'charts.js' %>

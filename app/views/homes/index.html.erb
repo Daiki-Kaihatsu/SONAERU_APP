@@ -22,15 +22,67 @@
     <div class="i-latest">
       <div class="i-margin"><i class="fas fa-chart-line"></i></div>
       <h3>最新の感染状況がわかる</h3>
-      <p>✔︎ その日の感染者の最新状況を掲載します</p>
+      <p>✔︎ 厚生労働省のデータより最新の感染情報を掲載します</p>
     </div>
     <div class="i-look">
-      <div class="i-margin"><i class="fas fa-search-plus"></i></div>
-      <h3>探しやすい</h3>
-      <p>✔︎ 検索機能や最新の口コミから検索可能</p>
+      <div class="i-margin"><i class="far fa-star"></i></div>
+      <h3> レビュー機能の実装</h3>
+      <p>✔︎ 気になる投稿があれば、コメントをしてみよう！</p>
     </div>
   </div>
-  <div class="goods">
-    <h2>最新コロナ情報</h2>
+  <div class="font-awesome">
+    <div class="i-latest">
+      <div class="i-margin"><i class="far fa-image"></i></div>
+      <h3>画像のプレビューが可能</h3>
+      <p>✔︎ 画像投稿する際にプレビューが表示されるように実装</p>
+    </div>
+    <div class="i-look">
+      <div class="i-margin"><i class="fas fa-shopping-cart"></i></div>
+      <h3> 楽天APIの実装</h3>
+      <p>✔︎ 気になる材料や道具があれば楽天で調べてみよう</p>
+    </div>
+  </div>
+  </div>
+  </div>
+  <div class="latest-inf">
+    <div class="colona">
+      <h2>最新コロナ情報</h2>
+      <div class="time">
+        <%= @time %>
+      </div>
+      <div class="data-inf">
+        <p>データソース：
+          <%= link_to 'https://www.mhlw.go.jp/stf/covid-19/open-data.html', target: :_blank ,class:'link-font' do%>
+              厚生労働省オープンデータ
+          <% end %>
+        </p>
+      </div>
+    </div>
+    <div class="status">
+      <h4>国内の発生状況</h4>
+    </div>
+    <div class="positive">
+      <h4>累計陽性者数</h4>
+      <p class="latest"><%= @positive.positive_difference%></p>
+      <p class="yesterday-positive">(前日比+<%= @positive.positive %>)</p>
+    </div>
+    <div class="pcr-test">
+      <h4>PCR検査人数</h4>
+      <p class="latest"><%= @pcrtest.pcrtest_sum %></p>
+      <p class="yesterday-pcrtest">(前日比+<%= @pcrtest.pcrtest %>)</p>
+    </div>
+    <div class="recovery">
+      <h4>退院・療養解除</h4>
+      <p class="latest"><%= @recovery.recovery%></p>
+      <p class="yesterday-pcrtest">(前日比+<%= @recovery.recovery_difference %>)</p>
+    </div>
+    <div class="chart-link">
+    <p>
+      <%= link_to charts_index_path style:'text-decoration: none;' do%>
+        グラフでさらに詳しく
+        <i class="fas fa-arrow-alt-circle-right"></i>
+      <% end %>
+    </p>
+    </div>
   </div>
 </div>

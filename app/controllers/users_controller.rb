@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     user_id = User.find(params[:id]).id
-    @user_board = Board.where(user_id: user_id)
+    @user_board = Board.where(user_id: user_id).order(created_at: :desc)
   end
 
     # フォロー一覧を取得

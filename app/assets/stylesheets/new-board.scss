@@ -2,9 +2,9 @@ main {
   background: #fbf9f3;
 }
 
-.relative img {
-  opacity: 0.4;
-}
+// .relative img {
+//   opacity: 0.8;
+// }
 
 
 .board-new-background{
@@ -21,7 +21,7 @@ main {
 //     padding: 20px;
 //   }
 
-  .reason{
+  .text-form{
     max-width: 100%;
   }
 
@@ -117,11 +117,6 @@ main {
 
 .Heading{
   max-width: 100%;
-}
-
-.tag-width{
-  max-width: 100%;
-  margin: 0 auto;
 }
 
 .checkbox {
@@ -450,6 +445,11 @@ margin: 30px;
 }
 
 .reason{
+  width: 500px;
+  margin: 0 auto;
+}
+
+.text-form{
   width: 500px;
   margin: 0 auto;
 }

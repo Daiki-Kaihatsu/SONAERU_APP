@@ -2,99 +2,89 @@
   <%= stylesheet_link_tag 'user-show' %>
 <% end %>
 <%= render 'shared/flash_messages'%>
-  
-<%# <div class="container-fluid">
-  <div class="row"> %>
-    <div class= "margin">
-      <div class="center">
-        <div class="show-image">
-          <%= attachment_image_tag @user,:profile_image, fallback:"No-Image.png",class:'user-image'%>
-        </div>
-        <div class="show-name">
-          <%= @user.name%>
-        </div>
-        <div class="show-email">
-          <% if @user.id == current_user.id %>
-              <span><%= @user.email %></span>
-          <% end %>
-        </div>
-        <div class="follow">
-          <p class="profile">
-            <%= link_to following_user_path(@user),style:'text-decoration:none;' do%>
-              <span>フォロー<%= @user.followings.count%></span> 
-            <% end %>
-              &ensp;  &ensp;  &ensp; 
-            <%= link_to followers_user_path(@user),style:'text-decoration:none;' do%>
-              <span>フォロワー<%= @user.followers.count%></span>
-            <% end %>
-          </p>
-        </div>
-        <div class="show-profile">
-          <%=simple_format @user.profile%>
-        </div>
-        <div class="follow-btn">
-          <%= render 'relationships/follow_button', user: @user %>
-        </div>
-        <div class="show-btn-edit">
-          <% if @user.id == current_user.id %>
-                <%= link_to 'プロフィールを編集する', edit_user_registration_path ,class:'btn-square',style:'text-decoration: none;'%>
-          <% end %>
-        </div>
-        <hr>
-        <div class="text">
-          <%= @user.name %>さんが投稿した記事一覧</h2>
-        </div>
-
-        <div class="show-board-registration">
-        <% @user_board.each do |board| %>
-        <hr class="hr">
-            <div class="border-show-flex">
-              <div class="child-show">
-                <%= link_to board_path(board) do %> 
-                  <%= attachment_image_tag board, :image,fallback: "No-Image.png",class:"show-user-image"%>
-                <% end %>
-                <div class="show-flex">
-                  <div class="day">
-                    <%= board.updated_at.strftime("%Y-%m-%d") %>に投稿</span>
-                  </div>
-                  <div class="show-title">
-                  <%= link_to board_path(board.id)do %>
-                    <%= board.title%>
-                  <% end %>
-                  </div>
-                </div>
-              </div>
-                <div class="tag-board-show">
-                  <% board.tags.each do |tag|%>
-                    <span class="badge badge-info"><%= tag.name%></span>
-                  <% end %>
-                </div>
-            </div>
-              <div class=" front-flex">
-              <div class="star-rating">
-                <div class=" star-rating-front" style="width: <%= board.review_score_percentage %>%">★★★★★</div>
-                <div class=" star-rating-back">★★★★★</div>
-              </div>
-              <div class="average-score-display">
-                  <%= board.avg_score %>点(<%= board.reviews.count%>件のレビュー)
-              </div>
-            </div>
-            <div class="review">
-            <%= link_to board_reviews_path(board) do%>
-              レビューを見る
-            <%end%>
-            <%= link_to board_path(board) do%>
-              レビューを書く
-            <%end%>
-            
-          </div>
-
-          <hr class="hr">
-      </div>
-    <% end %>
-        </div>
-      </div>
+<div class= "margin">
+  <div class="center">
+    <div class="show-image">
+      <%= attachment_image_tag @user,:profile_image, fallback:"No-Image.png",class:'user-image'%>
     </div>
-  <%# </div>
-</div> %>
-
+    <div class="show-name">
+      <%= @user.name%>
+    </div>
+    <div class="show-email">
+      <% if @user.id == current_user.id %>
+          <span><%= @user.email %></span>
+      <% end %>
+    </div>
+    <div class="follow">
+      <p class="profile">
+        <%= link_to following_user_path(@user),style:'text-decoration:none;' do%>
+          <span>フォロー<%= @user.followings.count%></span> 
+        <% end %>
+          &ensp;  &ensp;  &ensp; 
+        <%= link_to followers_user_path(@user),style:'text-decoration:none;' do%>
+          <span>フォロワー<%= @user.followers.count%></span>
+        <% end %>
+      </p>
+    </div>
+    <div class="show-profile">
+      <%=simple_format @user.profile%>
+    </div>
+    <div class="follow-btn">
+      <%= render 'relationships/follow_button', user: @user %>
+    </div>
+    <div class="show-btn-edit">
+      <% if @user.id == current_user.id %>
+            <%= link_to 'プロフィールを編集する', edit_user_registration_path ,class:'btn-square',style:'text-decoration: none;'%>
+      <% end %>
+    </div>
+    <hr>
+    <div class="text">
+      <%= @user.name %>さんが投稿した記事一覧</h2>
+    </div>
+    <div class="show-board-registration">
+      <% @user_board.each do |board| %>
+      <hr class="hr">
+      <div class="border-show-flex">
+        <div class="child-show">
+          <%= link_to board_path(board) do %> 
+            <%= attachment_image_tag board, :image,fallback: "No-Image.png",class:"show-user-image"%>
+          <% end %>
+          <div class="show-flex">
+            <div class="day">
+              <%= board.updated_at.strftime("%Y-%m-%d") %>に投稿</span>
+            </div>
+            <div class="show-title">
+              <%= link_to board_path(board.id)do %>
+                <%= board.title%>
+              <% end %>
+            </div>
+          </div>
+        </div>
+        <div class="tag-board-show">
+          <% board.tags.each do |tag|%>
+            <span class="badge badge-info"><%= tag.name%></span>
+          <% end %>
+        </div>
+      </div>
+      <div class=" front-flex">
+        <div class="star-rating">
+          <div class=" star-rating-front" style="width: <%= board.review_score_percentage %>%">★★★★★</div>
+          <div class=" star-rating-back">★★★★★</div>
+        </div>
+        <div class="average-score-display">
+            <%= board.avg_score %>点(<%= board.reviews.count%>件のレビュー)
+        </div>
+      </div>
+      <div class="review">
+        <%= link_to board_reviews_path(board) do%>
+          レビューを見る
+        <%end%>
+        <%= link_to board_path(board) do%>
+          レビューを書く
+        <%end%>
+      </div>
+      <hr class="hr">
+      <% end %>
+    </div>
+  </div>
+</div>

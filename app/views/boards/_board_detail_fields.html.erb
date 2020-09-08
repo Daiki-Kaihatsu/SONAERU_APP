@@ -3,7 +3,6 @@
         <%= f.text_area:body,class:'body',rows:3,cols:1,:placeholder => "説明文を入力"  %><br>
         <div id="add-image_0" class="add-relative image-add"> 
           <%= link_to '写真を載せる',class:'add-image',id:'image-preview'%>
-          <%# <i class="fa fa-camera add-i"></i> %>
         </div> 
             <%= f.attachment_field :image_detail, class: "imageFile",id:"imageFile_0"%>
         <div class="flex-delete-image">
@@ -16,3 +15,4 @@
 </div>
 
 <%= javascript_include_tag 'boards_detail_image.js' %>
+

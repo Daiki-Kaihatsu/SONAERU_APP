@@ -1,2 +1,8 @@
-<h1>Boards#edit</h1>
-<p>Find me in app/views/boards/edit.html.erb</p>
+<% content_for :css do %>
+  <%= stylesheet_link_tag 'new-board' %>
+<% end %>
+    <%= render 'shared/flash_messages'%>
+      <div class="board-new-background">
+        <%= render 'form',board: @board %>
+      </div>
+

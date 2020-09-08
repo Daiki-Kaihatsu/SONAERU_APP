@@ -27,6 +27,12 @@ class BoardsController < ApplicationController
   end
 
   def edit
+    @board= Board.find(params[:id])
+    board_id = Board.find(params[:id]).id
+    @board_material = BoardMaterial.where(board_id: board_id)
+    @board_details = BoardDetail.where(board_id: board_id)
+    @review = Review.new
+    @reviews = Review.where(board_id: board_id)
   end
 
   def create
@@ -42,15 +48,26 @@ class BoardsController < ApplicationController
   end
 
   def update
+    @board= Board.find(params[:id])
+    @board.update(board_params)
+      flash[:notice] = '更新が完了しました' 
+      redirect_to user_path(@board.user_id)
   end
 
   def destroy
+    @board= Board.find(params[:id])
+    @board.user_id = current_user.id
+    if  @board.destroy
+      redirect_to user_path(@board.user_id),notice:'削除に成功しました'
+    else
+      render :show
+    end
   end
 
   private
 
   def board_params
-    params.require(:board).permit(:title,:image,:reason, tag_ids: [],board_details_attributes: [:id, :body, :image_detail, :_destroy],board_materials_attributes: [:id, :material, :quantity, :_destroy])
+    params.require(:board).permit(:title,:image,:reason,:point, tag_ids: [],board_details_attributes: [:id, :body, :image_detail, :_destroy],board_materials_attributes: [:id, :material, :quantity, :_destroy])
   end
 
 end

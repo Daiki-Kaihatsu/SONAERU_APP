@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_30_093227) do
+ActiveRecord::Schema.define(version: 2020_09_07_130930) do
 
   create_table "board_details", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.integer "board_id"
@@ -44,11 +44,26 @@ ActiveRecord::Schema.define(version: 2020_08_30_093227) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "reason"
+    t.text "point"
   end
 
   create_table "pcrpositives", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.date "day"
     t.string "positive"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pcrtesteds", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "day"
+    t.string "pcrtest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "recoveries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.date "day"
+    t.string "recovery"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
