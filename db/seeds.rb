@@ -46,12 +46,12 @@ require "csv"
 
 # lead = CSV.read('config/csv/pcr_positive_daily.csv')
 # lead.lastで最後の要素の取得はできる
-# lead = CSV.read('config/csv/pcr_positive_daily.csv')
-# lead_last = lead.last 
-# Pcrpositive.create!(
-#   :day => lead_last[0],
-#   :positive => lead_last[1],
-#   )
+lead = CSV.read('config/csv/pcr_positive_daily.csv')
+lead_last = lead.last 
+Pcrpositive.create!(
+  :day => lead_last[0],
+  :positive => lead_last[1],
+  )
 
 
 # --------PCR検査数------------
@@ -65,28 +65,28 @@ require "csv"
 
 # lead = CSV.read('config/csv/pcr_tested_daily.csv')
 # lead.lastで最後の要素の取得はできる
-# lead = CSV.read('config/csv/pcr_tested_daily.csv')
-# lead_last = lead.last 
-# Pcrtested.create!(
-#   :day => lead_last[0],
-#   :pcrtest => lead_last[1],
-#   )
+lead = CSV.read('config/csv/pcr_tested_daily.csv')
+lead_last = lead.last 
+Pcrtested.create!(
+  :day => lead_last[0],
+  :pcrtest => lead_last[1],
+  )
 
 
   # --------回復者数------------
 # # 回復者数のcsvデータ 初期投入
-CSV.foreach('config/csv/recovery_total.csv', headers: true) do |row|
-  Recovery.create!(
-    :day => row[0],
-    :recovery => row[1],
-  )
-end
+# CSV.foreach('config/csv/recovery_total.csv', headers: true) do |row|
+#   Recovery.create!(
+#     :day => row[0],
+#     :recovery => row[1],
+#   )
+# end
 
 # lead = CSV.read('config/csv/recovery_total.csv')
 # lead.lastで最後の要素の取得はできる
-# lead = CSV.read('config/csv/recovery_total.csv')
-# lead_last = lead.last 
-# Recovery.create!(
-#   :day => lead_last[0],
-#   :recovery => lead_last[1],
-#   )
+lead = CSV.read('config/csv/recovery_total.csv')
+lead_last = lead.last 
+Recovery.create!(
+  :day => lead_last[0],
+  :recovery => lead_last[1],
+  )

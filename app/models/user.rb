@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
           :recoverable, :rememberable, :validatable
 
-  # 空白NG
+  # 名前とEメールの空白はNG
   validates :name, presence: true
   validates :email, presence: true
 
