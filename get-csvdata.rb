@@ -1,7 +1,6 @@
-# 陽性者数のcsvファイルを取得
 require 'open-uri'
-# ファイル移動するためのライブラリ
 require 'Fileutils'
+
 # ダウンロード先のパスを指定
 @positive = 'https://www.mhlw.go.jp/content/pcr_positive_daily.csv'
 @pcrtest = 'https://www.mhlw.go.jp/content/pcr_tested_daily.csv'

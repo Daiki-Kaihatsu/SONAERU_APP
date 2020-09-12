@@ -1,24 +1,52 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+SONAERUは自然災害や感染症などのリスクが高まる状況の中、これらのリスクに対する情報共有の場として活用することを目的としております。 
+それに伴い、防災意識の向上が見込まれ、自然災害や感染症のリスクへの逓減にも大きな役割を果たせます。
 
-Things you may want to cover:
+**実装した機能一覧**
+* ログイン機能
 
-* Ruby version
+* フォロー機能
 
-* System dependencies
+* コロナの最新感染情報をグラフで表示する機能
 
-* Configuration
+* 星レビュー機能
 
-* Database creation
+* 楽天API機能
 
-* Database initialization
+* 記事投稿機能
 
-* How to run the test suite
+* ページネーション機能
 
-* Services (job queues, cache servers, search engines, etc.)
+* タグ付機能
 
-* Deployment instructions
+* 画像プレビュー機能
 
-* ...
+
+**gem一覧**
+
+*devise
+
+*bootstrap
+
+*font-awesome-rails
+
+*refile
+
+*kaminari
+
+*cocoon
+
+*rakuten_web_service
+
+*chart-js-rails
+
+*gon
+
+*pry-byebug
+
+*rspec-rails
+
+*factory_bot_rails
+
+*capybara

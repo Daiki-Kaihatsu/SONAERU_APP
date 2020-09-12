@@ -2,21 +2,20 @@ require 'rails_helper'
 
 RSpec.feature 'TopPage', type: :system do
   background do
-    # ユーザを作成する
-    @user = create(:user)
+    @positive = create(:pcrpositive)
+    @pcrtest = create(:pcrtested)
+    @recovery = create_list(:recovery, 2)
   end
 
-  scenario 'ログインする' do
+  scenario 'トップ画面から新型コロナ感染状況のページに遷移する' do
     # トップページを開く
     visit root_path
-    # ログインボタンをクリック
-    click_link 'ログイン'
-    # ログインフォームに名前とパスワードを入力する
-    fill_in 'name', with: '細井大輝'
-    fill_in 'password', with: 'foobar'
-    # サインインボタンをクリックする
-    click_on 'サインイン'
-    # ログインに成功したことを検証する
-    expect(page).to have_content 'ログインしました。'
+    # 新型コロナ最新状況のリンクをクリック
+    click_link '新型コロナ感染状況'
+    # ページ遷移したことを確認する
+    expect(page).to have_content '新型コロナ最新情報'
   end
 end
+
+
+ログイン処理を行う

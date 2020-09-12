@@ -1,10 +1,11 @@
-require 'active_support/core_ext/numeric/conversions'
+# require 'active_support/core_ext/numeric/conversions'
 
 class Recovery < ApplicationRecord
   def recovery_difference
     # 1日あたりの回復者数
-    recovery_today = Recovery.last
-    today = recovery_today.recovery
+    # recovery_today = Recovery.last
+    # today = recovery_today.recovery
+    today = Recovery.last.recovery
 
     # 前日までの回復者数
     yesterday = Recovery.all
@@ -16,6 +17,6 @@ class Recovery < ApplicationRecord
     yesterday_num = yesterday.to_i
 
     difference =  today_num - yesterday_num 
-    difference = difference.to_s
+    # difference = difference.to_s
   end
 end
