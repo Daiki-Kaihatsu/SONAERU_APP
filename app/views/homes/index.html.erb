@@ -10,9 +10,9 @@
       <h1 class="title">SONAERU</h1>
       <p class="subtitle">〜いつ起こるかわからない非常事態に備えよう〜</p>
     </div>
-
   </div>
 </div>
+
 <div class="Explanation">
   <div class="font">
     <h2>SONAERUとは</h2>
@@ -42,13 +42,11 @@
       <p>✔︎ 気になる材料や道具があれば楽天で調べてみよう</p>
     </div>
   </div>
-  </div>
-  </div>
   <div class="latest-inf">
     <div class="colona">
       <h2>最新コロナ情報</h2>
-      <div class="time">
-        <%= @time %>
+      <div class="home-time">
+        <%= @time %> <span>時点</span>
       </div>
       <div class="data-inf">
         <p>データソース：
@@ -73,16 +71,16 @@
     </div>
     <div class="recovery">
       <h4>退院・療養解除</h4>
-      <p class="latest"><%= @recovery.recovery%></p>
+      <p class="latest"><%= @recovery.recovery_canma%></p>
       <p class="yesterday-pcrtest">(前日比+<%= @recovery.recovery_difference %>)</p>
     </div>
     <div class="chart-link">
-    <p>
-      <%= link_to charts_index_path style:'text-decoration: none;' do%>
-        グラフでさらに詳しく
-        <i class="fas fa-arrow-alt-circle-right"></i>
-      <% end %>
-    </p>
+      <p>
+        <%= link_to charts_index_path style:'text-decoration: none;' do%>
+          グラフでさらに詳しく
+          <i class="fas fa-arrow-alt-circle-right"></i>
+        <% end %>
+      </p>
     </div>
   </div>
 </div>

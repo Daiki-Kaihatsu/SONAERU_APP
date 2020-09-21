@@ -2,12 +2,12 @@
   <%= stylesheet_link_tag 'registrations' %>
   <%= stylesheet_link_tag 'commons' %>
 <% end %>
+
 <div class="new-user">
   <div class="new-user-triangle"></div>
     <%= form_for(resource, as: resource_name,html: { class: "new-user-container" }, url: registration_path(resource_name)) do |f| %>
       <h2 class="new-user-header">Update Account</h2>
       <%= bootstrap_devise_error_messages! %>
-
       <div id="cover-profile-image" class="img-profile profile-relative">
         <% if @user.profile_image_id.present? %>
           <%= image_tag attachment_url(@user, :profile_image),class:'profile-image' %>
@@ -16,7 +16,6 @@
         <% end %>
       </div>
         <%= f.attachment_field :profile_image,autofocus: true, autocomplete: 'profile_image'%>
-      
       <div class="inputs">
         <%= f.label '名前', class:'label-color'%>
         <%= f.text_field :name, autofocus: true, autocomplete: 'name',placeholder: "name" %>

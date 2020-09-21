@@ -18,6 +18,11 @@ RUN apt-get update -qq && \
     vim && \
     rm -rf /var/lib/apt/lists/*
 
+# wheneverでcrontab書き込み
+RUN apt-get update
+RUN apt-get install -y cron
+
+
 # chromeの追加
 RUN apt-get update && apt-get install -y unzip && \
     CHROME_DRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE` && \
@@ -69,6 +74,11 @@ RUN gem install bundler -v 2.0.2 && \
     bundle config --global build.nokogiri --use-system-libraries && \
     bundle install --path=vendor/bundle --jobs 4
 ADD . /$APP_ROOT
+
+# cronをフォアグラウンド実行
+RUN bundle exec whenever --update-crontab
+CMD ["cron", "-f"] 
+
 EXPOSE 3000
 RUN chown -R app:app /$APP_ROOT
 USER app

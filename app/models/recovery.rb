@@ -1,6 +1,8 @@
 # require 'active_support/core_ext/numeric/conversions'
 
 class Recovery < ApplicationRecord
+
+  # 1日当たりの回復者
   def recovery_difference
     # 1日あたりの回復者数
     # recovery_today = Recovery.last
@@ -19,4 +21,14 @@ class Recovery < ApplicationRecord
     difference =  today_num - yesterday_num 
     # difference = difference.to_s
   end
+
+  # カンマ区切り
+  def recovery_canma
+    recovery = Recovery.last
+    recovery = recovery.recovery
+    recovery = recovery.to_s.reverse.gsub( /(\d{3})(?=\d)/, '\1,').reverse
+    # recovery.delete!('.')
+  end
+
+
 end

@@ -13,6 +13,12 @@
  *= require_self
  */
 @import "bootstrap";
+
+// headerを固定
+.header{
+  position: fixed;
+}
+
 // ログイン画面
 
 .container-login {
@@ -34,4 +40,10 @@
   @extend .alert-danger;
   text-align: center;
   margin-bottom: 0;
+}
+
+// コロナ情報の日付を表示
+.time {
+  text-align: center;
+  color: white;
 }

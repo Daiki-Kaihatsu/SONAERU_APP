@@ -1,8 +1,9 @@
+namespace :get_csv do
+  desc "厚生労働省のサイトからcsvファイルを取得するタスク"
+  require 'open-uri'
+  task csv_scraping: :environment do
 
-require 'open-uri'
-require 'Fileutils'
-
-# ダウンロード先のパスを指定
+      # ダウンロード先のパスを指定
 @positive = 'https://www.mhlw.go.jp/content/pcr_positive_daily.csv'
 @pcrtest = 'https://www.mhlw.go.jp/content/pcr_tested_daily.csv'
 @recovery = 'https://www.mhlw.go.jp/content/recovery_total.csv'
@@ -36,8 +37,9 @@ open(recoveried, 'wb') do |output|     #※１
   end
 end
 
-
 # 取得したcsvファイルを移動
 FileUtils.mv('pcr_positive_daily.csv','config/csv')
 FileUtils.mv('pcr_tested_daily.csv','config/csv')
 FileUtils.mv('recovery_total.csv','config/csv')
+end
+end

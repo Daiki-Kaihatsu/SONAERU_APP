@@ -27,8 +27,9 @@ class ChartsController < ApplicationController
     @pcrtest =  Pcrtested.last
     @recovery = Recovery.last
     wd = ["日", "月", "火", "水", "木", "金", "土"]
-    time = Time.now
-    @time = time.strftime("%m/%d(#{wd[time.wday]})")
-
+    # time = Time.now
+    # @time = time.strftime("%m/%d(#{wd[time.wday]})")
+    time = @positive.day
+    @time = time.to_s.gsub(/-/,"/")
   end
 end
