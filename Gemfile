@@ -65,12 +65,14 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
   # Factroybot
   gem 'factory_bot_rails'
-  # capistrano
-  gem 'capistrano'
-  gem 'capistrano-rbenv'
-  gem 'capistrano-bundler'
-  gem 'capistrano-rails'
-  gem 'capistrano3-unicorn'
+end
+
+group :staging, :production do
+  # Use Capistrano for deployment
+  gem 'capistrano',                 '3.11.2'
+  gem 'capistrano-rails',           '1.4.0'
+  gem 'capistrano-rbenv',           '2.1.4 '
+  gem 'capistrano-passenger',       '0.2.0'
 end
 
 group :development do
@@ -79,6 +81,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'spring-commands-rspec'
+  gem 'capistrano3-unicorn'
 end
 
 group :test do
