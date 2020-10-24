@@ -52,6 +52,11 @@ gem 'whenever', require: false
 # capybaraでブラウザの確認
 gem 'launchy'
 
+#unicorn
+gem 'unicorn'
+
+
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # デバッグ
@@ -60,6 +65,12 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.0'
   # Factroybot
   gem 'factory_bot_rails'
+  # capistrano
+  gem 'capistrano'
+  gem 'capistrano-rbenv'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano3-unicorn'
 end
 
 group :development do
@@ -73,6 +84,10 @@ end
 group :test do
   gem 'capybara', '>= 2.15', '< 4.0'
   gem 'selenium-webdriver'
+end
+
+group :production, :staging do
+    gem 'unicorn'
 end
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

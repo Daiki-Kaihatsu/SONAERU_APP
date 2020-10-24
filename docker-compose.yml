@@ -30,7 +30,8 @@ services:
       bin/rails db:create &&
       bin/rails db:migrate &&
       rm -rf tmp/pids/server.pid &&
-      bundle exec pumactl start"
+      bundle exec unicorn -p 3000 -c /app/config/unicorn.rb"
+  
     volumes:
       # Dockerfileで定義したWORKDIRと同じ名前で、そこから相対パスで考えてマウント
       - .:/app
