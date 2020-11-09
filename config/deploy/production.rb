@@ -8,7 +8,7 @@
 # server "db.example.com", user: "deploy", roles: %w{db}
 
 
-server '18.181.142.205', user: 'daiki', roles: %w{app db web}
+server 'www.sonaeru-app.work', user: 'daiki', roles: %w{app db web}
 
 # role-based syntax
 # ==================
@@ -42,11 +42,10 @@ server '18.181.142.205', user: 'daiki', roles: %w{app db web}
 #
 # Global options
 # --------------
-  set :ssh_options, {
-    keys: %w(/~/.ssh/sonaeru_key_rsa),
-    forward_agent: true,
-    auth_methods: %w(publickey)
-  }
+  set :ssh_options, keys: '~/.ssh/sonaeru_key_rsa'
+  #   forward_agent: true,
+  #   auth_methods: %w(publickey)
+  # }
 #
 # The server-based syntax can be used to override options:
 # ------------------------------------
