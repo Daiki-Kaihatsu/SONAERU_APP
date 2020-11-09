@@ -4,8 +4,8 @@ URL:https://www.sonaeru-app.work/
 
 SONAERUは自然災害や感染症などのリスクが高まる状況の中、これらのリスクに対する情報共有の場として活用することを目的としております。 
 
-![トップページ]( "top")
-![グラフ機能](images/colona.png "colona")
+<img src="https://github.com/Daiki-Kaihatsu/SONAERU_APP/blob/master/app/assets/images/Top.png?raw=true">
+<img src="https://github.com/Daiki-Kaihatsu/SONAERU_APP/blob/master/app/assets/images/colona.png?raw=true">
 
 
 # 開発環境
